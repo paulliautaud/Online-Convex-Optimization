@@ -38,7 +38,7 @@ def sreg(model, X, y, epoch, l, z=1, lr=1, verbose=0):
         tetatp[Jt] = np.exp(etat * d * instg_j) * tetatp[Jt]
         tetat = np.r_[tetatm, tetatp]  # vect of size 2d !
         new_wts = tetat / np.sum(tetat)
-        new_wts = z * (new_wts[0:d] - new_wts[d:])
+        new_wts = (new_wts[0:d] - new_wts[d:])#z * (new_wts[0:d] - new_wts[d:])
         wts.append(new_wts)
         model.w = new_wts
 
@@ -102,7 +102,7 @@ def sbeg(model, X, y, epoch, l, z=1, lr=1, verbose=0):
         tetat = np.r_[tetatm, tetatp]
         new_wts = (tetat / np.sum(tetat)) * (1 - etat) + etat / (2 * d)  # 1/2d is the initial draw probability
         prob = new_wts
-        new_wts = z * (new_wts[0:d] - new_wts[d:])
+        new_wts = (new_wts[0:d] - new_wts[d:])#z * (new_wts[0:d] - new_wts[d:])
         wts.append(new_wts)
         model.w = new_wts
 

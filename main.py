@@ -27,7 +27,7 @@ from utils import *
 np.random.seed(123)
 
 lr = 0.1
-nepoch = 1000
+nepoch = 10000
 lbd = 1 / 3  # or change to 1/5 for sbeg and sreg to get better results
 Z = [100]
 Zsbeg = [1000]
@@ -50,6 +50,8 @@ alg_to_run = [
     'adamax',
     'adamtemp',
     'adamaxtemp']
+
+alg_to_run = ['sreg', 'sbeg']
 
 
 ############################### Read and prepare data ####################
