@@ -39,7 +39,7 @@ class LinearSVM:
         """
         Compute the gradient of the loss wrt the current parameters and data
         x (m) : params
-        a (nxm) : data
+        a (nxm) : data (number x size)
         b (n) : labels
         l (float) : regularization parameter (lambda)"""
 

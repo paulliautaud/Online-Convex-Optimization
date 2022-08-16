@@ -97,3 +97,18 @@ def compute_errors(wts, X, y_true, average=True):
         err = 1 - accuracy(y_pred, y_true)
         errs.append(err)
     return errs
+
+def mask(data, learner, n_learners, ratio=0.85):
+    """
+    This function acts as a mask on a given data by mapping the latest to a masked one ((1-ratio) is hidden)
+    :data: data we want to mask partially - it requires to be already flatten
+    :learner: the id of the learner, useful to adapt the transformation with respect to the learner
+    :n_learner: number of weak learners
+    :ratio: ratio we want to keep from the initial data
+    """
+    n,l = data.shape # n is the number of data, l is the length
+    size_out = int(l*ratio)
+    jump = (l - size_out)//n_learners
+    res = np.zeros((n,l))
+    res[:, learner*jump:learner*jump+size_out] = data[:,learner*jump:learner*jump+size_out]
+    return res

@@ -3,8 +3,8 @@ Sorbonne University
 Master M2A
 Convex sequential Optimization
 Olivain Nicolas
-Liautaud Paul
 Le Boudec Lise
+Liautaud Paul
 
 Main file
 """
@@ -27,7 +27,7 @@ from utils import *
 np.random.seed(123)
 
 lr = 0.1
-nepoch = 10000
+nepoch = 100
 lbd = 1 / 3  # or change to 1/5 for sbeg and sreg to get better results
 Z = [100]
 Zsbeg = [1000]
@@ -51,7 +51,7 @@ alg_to_run = [
     'adamtemp',
     'adamaxtemp']
 
-alg_to_run = ['sreg', 'sbeg']
+alg_to_run = ['sreg']
 
 
 ############################### Read and prepare data ####################
