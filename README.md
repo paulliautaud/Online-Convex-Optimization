@@ -1,4 +1,4 @@
-# Online Sequential Optimization
+# Online Convex Optimization
 
 Course from O. Wintenberger for Master M2A @ Sorbonne Université.   
 Website: http://wintenberger.fr/ens.html
